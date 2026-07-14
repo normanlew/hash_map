@@ -77,6 +77,22 @@ class HashMap {
 // However, we mention this with set() because it’s important to grow buckets exactly 
 // as they are being expanded.
 
+
+// takes one argument as a key and returns the value 
+// that is assigned to this key. If a key is not found, return null.
+    get(key) {
+        let hashCode = this.hash(key);
+        let node = this.h_map[hashCode];
+        
+        while (node.nextNode != null) {
+            node = node.nextNode;
+            if (node.key === key) {
+                return node.value;
+            }
+        }
+        return null;
+    }
+
     entries() {
         let return_array = [];
         for (let i = 0; i < this.h_map.length; i++) {
