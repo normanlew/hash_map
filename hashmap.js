@@ -86,8 +86,8 @@ class HashMap {
         
         while (node.nextNode != null) {
             node = node.nextNode;
-            if (node.key === key) {
-                return node.value;
+            if (node.value.key === key) {
+                return node.value.value;
             }
         }
         return null;
