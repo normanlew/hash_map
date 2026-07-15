@@ -8,12 +8,6 @@ class HashMap {
             this.h_map[i] = new Node();
         }
     }
-    // load_factor = .75;
-    // capacity = 16;
-    // // size = 0;
-    // h_map = new Array(this.capacity).fill(new Node());
-
-    
 
     hash(key) {
         let hashCode = 0;
