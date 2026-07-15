@@ -126,6 +126,38 @@ class HashMap {
     length() {
         return this.size;
     }
+    
+    clear() {
+        for (let i = 0; i < this.h_map.length; i++) {
+            this.h_map[i] = new Node();
+        }
+        this.size = 0;
+    }
+
+    keys() {
+        let key_array = [];
+        for (let i = 0; i < this.h_map.length; i++) {
+            let node = this.h_map[i];
+            while (node.nextNode != null) {
+                node = node.nextNode;
+                key_array.push(node.value.key);
+            }
+        }    
+        return key_array;
+    }
+
+    values() {
+        let value_array = [];
+        for (let i = 0; i < this.h_map.length; i++) {
+            let node = this.h_map[i];
+            while (node.nextNode != null) {
+                node = node.nextNode;
+                value_array.push(node.value.value);
+            }
+        }    
+
+        return value_array;
+    }
 
     entries() {
         let return_array = [];
