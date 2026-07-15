@@ -12,14 +12,24 @@ test.set('grape', 'purple');
 
 // console.log(test.entries());
 // console.log(test.size);
+
 test.set('hat', 'black');
 test.set('ice cream', 'white');
 test.set('jacket', 'blue');
 test.set('kite', 'pink');
 test.set('lion', 'golden');
-// console.log(test.entries());
+console.log(test.entries());
 // console.log(test.size);
 console.log("get apple: " + test.get('apple'));
 console.log("get lion: " + test.get('lion'));
 console.log("get bat: " + test.get('bat'));
+console.log("has banana: " + test.has("banana"));
+console.log("has bat: " + test.has("bat"));
+console.log("------------");
+console.log("remove apple: " + test.remove("apple"));
+console.log(test.entries());
+console.log("remove elephant: " + test.remove("elephant"));
+console.log(test.entries());
+console.log("remove mouse: " + test.remove("elephamousent"));
+console.log(test.entries());
 

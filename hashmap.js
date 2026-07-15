@@ -93,6 +93,35 @@ class HashMap {
         return null;
     }
 
+    has(key) {
+        let hashCode = this.hash(key);
+        let node = this.h_map[hashCode];
+        
+        while (node.nextNode != null) {
+            node = node.nextNode;
+            if (node.value.key === key) {
+                return true;
+            }
+        }
+        return false;        
+    }
+
+    remove(key) {
+        let hashCode = this.hash(key);
+        let node = this.h_map[hashCode];
+        
+        while (node.nextNode != null) {
+            if (node.nextNode.value.key === key) {
+                node.nextNode = node.nextNode.nextNode;
+                return true;
+            }
+            else {
+                node = node.nextNode;
+            }
+        }
+        return false;  
+    }
+
     entries() {
         let return_array = [];
         for (let i = 0; i < this.h_map.length; i++) {
