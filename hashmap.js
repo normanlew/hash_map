@@ -113,6 +113,7 @@ class HashMap {
         while (node.nextNode != null) {
             if (node.nextNode.value.key === key) {
                 node.nextNode = node.nextNode.nextNode;
+                this.size--;
                 return true;
             }
             else {
@@ -120,6 +121,10 @@ class HashMap {
             }
         }
         return false;  
+    }
+
+    length() {
+        return this.size;
     }
 
     entries() {
